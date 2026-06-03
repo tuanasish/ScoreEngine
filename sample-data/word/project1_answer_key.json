@@ -1,0 +1,70 @@
+{
+  "examInfo": {
+    "product": "Word",
+    "title": "Project 1 - PTA Meeting Minutes",
+    "totalPoints": 5
+  },
+  "domains": [
+    {
+      "domainId": "1",
+      "domainName": "Manage Documents",
+      "checkpoints": [
+        {
+          "id": "1.1",
+          "description": "Add Memo as the document category.",
+          "points": 1,
+          "property": "documentProperties.category",
+          "expectedValue": "Memo",
+          "comparisonType": "exactMatch"
+        },
+        {
+          "id": "1.2",
+          "description": "Set the paper size to Letter.",
+          "points": 1,
+          "property": "pageSetup.paperSize",
+          "expectedValue": "Letter",
+          "comparisonType": "exactMatch"
+        }
+      ]
+    },
+    {
+      "domainId": "2",
+      "domainName": "Format Text and Paragraphs",
+      "checkpoints": [
+        {
+          "id": "2.1",
+          "description": "Use the plane symbol from Segoe UI Emoji as the bullet character.",
+          "points": 1,
+          "property": "numbering.bullet",
+          "expectedValue": {
+            "bulletSymbol": "\u2708",
+            "bulletFont": "Segoe UI Emoji"
+          },
+          "comparisonType": "exactMatch"
+        },
+        {
+          "id": "2.2",
+          "description": "Clear direct formatting from August Bergqvist, PTA Treasurer.",
+          "points": 1,
+          "property": "textRuns.byText['August Bergqvist, PTA Treasurer'].hasDirectFormatting",
+          "expectedValue": false,
+          "comparisonType": "exactMatch"
+        }
+      ]
+    },
+    {
+      "domainId": "3",
+      "domainName": "Format Graphic Elements",
+      "checkpoints": [
+        {
+          "id": "3.1",
+          "description": "Apply the Glass artistic effect to the picture.",
+          "points": 1,
+          "property": "pictures.artisticEffect",
+          "expectedValue": "artisticGlass",
+          "comparisonType": "exactMatch"
+        }
+      ]
+    }
+  ]
+}
