@@ -3,13 +3,12 @@ namespace ScoreEngine.Tests;
 internal static class TestPaths
 {
     public static string ScoreEngineRoot => FindScoreEngineRoot();
-    public static string DocumentsRoot => FindDocumentsRoot();
 
     public static string CompletedWordSample =>
-        Path.Combine(DocumentsRoot, "inputs", "Project 1 - Sau khi làm.docx");
+        Path.Combine(ScoreEngineRoot, "sample-data", "word", "project1_completed.docx");
 
     public static string InitialWordSample =>
-        Path.Combine(DocumentsRoot, "inputs", "Project 1 - Trước khi làm.docx");
+        Path.Combine(ScoreEngineRoot, "sample-data", "word", "project1_initial.docx");
 
     public static string Project1AnswerKey =>
         Path.Combine(ScoreEngineRoot, "sample-data", "word", "project1_answer_key.json");
@@ -29,20 +28,5 @@ internal static class TestPaths
         }
 
         throw new DirectoryNotFoundException("Could not locate ScoreEngine root.");
-    }
-
-    private static string FindDocumentsRoot()
-    {
-        var parent = Directory.GetParent(ScoreEngineRoot)?.FullName
-            ?? throw new DirectoryNotFoundException("Could not locate Exam Platform root.");
-
-        var documentsRoot = Path.Combine(parent, "Exam-Platform-Documents");
-
-        if (!Directory.Exists(Path.Combine(documentsRoot, "inputs")))
-        {
-            throw new DirectoryNotFoundException($"Could not locate sample inputs at {documentsRoot}.");
-        }
-
-        return documentsRoot;
     }
 }
